@@ -12,22 +12,11 @@ export const StateContext = ({ children }) => {
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
-  useEffect(() => {
-    console.log("u cartItems", cartItems);
-  }, [cartItems]);
+  useEffect(() => {}, [cartItems]);
 
   const onAdd = (product, quantity, showCart = false) => {
-    console.log("product", product);
-    console.log("quantity", quantity);
-    console.log("cartItems", cartItems);
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
-    );
-
-    console.log(
-      "checkProductInCart",
-      checkProductInCart,
-      checkProductInCart == false
     );
 
     setTotalPrice(
@@ -44,12 +33,9 @@ export const StateContext = ({ children }) => {
           };
         return cartProduct;
       });
-      console.log("true updatedCartItems", updatedCartItems);
 
       setCartItems(updatedCartItems);
     } else {
-      console.log("false product", product);
-      console.log("false cartItems", cartItems);
       product.quantity = quantity;
       setCartItems([...cartItems, product]);
     }

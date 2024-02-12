@@ -35,21 +35,14 @@ const Cart = () => {
       body: JSON.stringify(cartItems),
     });
 
-    console.log("response", response);
-
     if (response.statusCode === 500) return;
 
     const data = await response.json();
-
-    console.log("data", data);
 
     toast.loading("Redirecting...");
 
     stripe.redirectToCheckout({ sessionId: data.id });
   };
-
-  console.log("cart cartItems", cartItems);
-
 
   return (
     <div className="cart-wrapper" ref={cartRef}>

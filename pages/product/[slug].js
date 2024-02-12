@@ -15,8 +15,6 @@ const ProductDetails = ({ product, products }) => {
   const { incQty, decQty, qty, onAdd } = useStateContext();
 
   const handleBuyNow = () => {
-    console.log("onadd product", product);
-    console.log("onadd qty", qty);
     onAdd(product, qty, true);
   };
 
