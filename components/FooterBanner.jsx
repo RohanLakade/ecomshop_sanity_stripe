@@ -19,10 +19,15 @@ const FooterBanner = ({ bannerData }) => {
     <div className="footer-banner-container">
       <div className="banner-desc">
         <div className="left">
-          <p>{discount}</p>
-          <h3>{largeText1}</h3>
-          <h3>{largeText2}</h3>
-          <p>{saleTime}</p>
+          <div>
+            <img src={urlFor(image)} alt="" className="footer-banner-image" />
+          </div>
+          <div>
+            <p>{discount}</p>
+            <h3>{largeText1}</h3>
+            <h3>{largeText2}</h3>
+            <p>{saleTime}</p>
+          </div>
         </div>
         <div className="right">
           <p>{smallText}</p>
@@ -32,7 +37,6 @@ const FooterBanner = ({ bannerData }) => {
             <button type="button">{buttonText}</button>
           </Link>
         </div>
-        <img src={urlFor(image)} alt="" className="footer-banner-image" />
       </div>
     </div>
   );
